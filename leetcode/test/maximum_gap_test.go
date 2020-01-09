@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-var _ = FDescribe("Leetcode/Test/MaximumGap", func() {
+var _ = Describe("Leetcode/Test/MaximumGap", func() {
 	It("[3, 6, 9, 1]", func() {
 		Expect(solution.Run([]int{3, 6, 9, 1})).To(Equal(3))
 	})

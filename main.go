@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	solution "oj-go/leetcode/solutions/odd-even-jump/4"
+	"time"
 )
 
 func main() {
-	fmt.Println(solution.Run([]int{82, 66, 0, 49}))
+	tm := time.Unix(1577786993, 0)
+	fmt.Println(tm)
 }
