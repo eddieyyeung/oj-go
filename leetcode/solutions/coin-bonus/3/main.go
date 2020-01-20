@@ -2,7 +2,6 @@ package solution
 
 import (
 	"container/list"
-	"fmt"
 )
 
 type Node struct {
@@ -75,7 +74,6 @@ func (st *SegmentTree) Print() {
 	for l.Len() != 0 {
 		e := l.Front()
 		node, _ := e.Value.(*Node)
-		fmt.Println("node", node)
 		l.Remove(e)
 		if node.Left != nil {
 			l.PushBack(node.Left)
@@ -153,10 +151,6 @@ func bonus(n int, leadership [][]int, operations [][]int) []int {
 			result = append(result, int(st.Query(st.Root, 0, n-1, m.Start, m.End)%1000000007))
 		}
 	}
-	// for i := 0; i < len(arr); i++ {
-	// 	fmt.Println(arr[i])
-	// }
-	// st.Print()
 	return result
 }
 

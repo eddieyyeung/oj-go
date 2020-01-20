@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-var _ = FDescribe("Leetcode/Test/CoinBonus", func() {
+var _ = Describe("Leetcode/Test/CoinBonus", func() {
 	It("case 1", func() {
 		Expect(solution.Run(
 			6,

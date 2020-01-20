@@ -11,3 +11,4 @@
   - [x] 欧拉定理
 - [x] [927. 三等分](https://leetcode-cn.com/problems/three-equal-parts/)
 - [ ] [546. 移除盒子](https://leetcode-cn.com/problems/remove-boxes/)
+- [ ] [最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
