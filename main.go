@@ -2,17 +2,10 @@ package main
 
 import (
 	"fmt"
-	solution "oj-go/leetcode/solutions/longest-palindromic-substring/1"
+	solution "oj-go/leetcode/solutions/unique-paths/1"
 )
 
 func main() {
-	fmt.Println(solution.Run("babad"))
-	fmt.Println(solution.Run("cbbd"))
-	fmt.Println(solution.Run("a"))
-	fmt.Println(solution.Run("bb"))
-	fmt.Println(solution.Run(""))
-	fmt.Println(solution.Run("abcdasdfghjkldcba"))
-	fmt.Println(solution.Run("222020221"))
-	fmt.Println(solution.Run("SQQSYYSQQS"))
-	// fmt.Println(solution.Run("babaddtattarrattatddetartrateedredividerb"))
+	fmt.Println(solution.Run(3, 2))
+	fmt.Println(solution.Run(7, 3))
 }
