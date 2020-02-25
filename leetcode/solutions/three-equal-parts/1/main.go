@@ -1,5 +1,7 @@
 package solution
 
+import "fmt"
+
 func getReal(a []int, startIndex int) (int, []int) {
 	i := startIndex
 	for ; i < len(a)-1; i++ {
@@ -85,4 +87,9 @@ func threeEqualParts(A []int) []int {
 
 func Run(A []int) []int {
 	return threeEqualParts(A)
+}
+
+func init() {
+	arr := []int{0, 0, 0, 0, 0}
+	fmt.Println(threeEqualParts(arr))
 }
