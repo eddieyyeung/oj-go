@@ -13,8 +13,8 @@ func TestSolution(t *testing.T) {
 		s2   string
 		want string
 	}{
-		{"a", "b", ""},
 		{"abcdef", "abc", "abc"},
+		{"a", "b", ""},
 		{"132535365", "123456789", "12356"},
 	}
 	for _, tc := range testCases {
