@@ -19,6 +19,7 @@ func bt(left int, right int, p int, str string, re *[]string) {
 	}
 }
 
+// Run https://leetcode-cn.com/explore/interview/card/top-interview-questions-medium/49/backtracking/92/
 func Run(n int) []string {
 	return generateParenthesis(n)
 }
