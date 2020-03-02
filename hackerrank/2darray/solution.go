@@ -10,6 +10,7 @@ import (
 )
 
 // Complete the hourglassSum function below.
+// https://www.hackerrank.com/challenges/2d-array/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=arrays
 func hourglassSum(arr [][]int32) int32 {
 	maxHourglass := int32(-100)
 	for i := 0; i < 4; i++ {
