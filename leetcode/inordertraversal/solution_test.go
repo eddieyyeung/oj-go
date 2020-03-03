@@ -63,3 +63,62 @@ func Test_inorderTraversal(t *testing.T) {
 		})
 	}
 }
+
+func Test_preorderTraversal(t *testing.T) {
+	type args struct {
+		root *TreeNode
+	}
+	root := &TreeNode{
+		1,
+		&TreeNode{
+			2,
+			&TreeNode{
+				4,
+				nil,
+				nil,
+			},
+			&TreeNode{
+				5,
+				&TreeNode{
+					7,
+					nil,
+					nil,
+				},
+				&TreeNode{
+					8,
+					nil,
+					nil,
+				},
+			},
+		},
+		&TreeNode{
+			3,
+			nil,
+			&TreeNode{
+				6,
+				nil,
+				nil,
+			},
+		},
+	}
+	tests := []struct {
+		name string
+		args args
+		want []int
+	}{
+		{
+			"case 1",
+			args{
+				root,
+			},
+			[]int{1, 2, 4, 5, 7, 8, 3, 6},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := preorderTraversal(tt.args.root); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("preorderTraversal() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

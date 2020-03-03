@@ -30,3 +30,22 @@ func inorderTraversal(root *TreeNode) []int {
 	}
 	return r
 }
+
+func preorderTraversal(root *TreeNode) []int {
+	l := list.New()
+	r := []int{}
+	p := root
+	for l.Len() != 0 || p != nil {
+		if p != nil {
+			r = append(r, p.Val)
+			l.PushBack(p)
+			p = p.Left
+		} else {
+			e := l.Back()
+			node, _ := e.Value.(*TreeNode)
+			l.Remove(e)
+			p = node.Right
+		}
+	}
+	return r
+}
