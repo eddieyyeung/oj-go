@@ -5,10 +5,13 @@ import (
 	"sort"
 )
 
+// Item ...
 type Item struct {
 	index int
 	value int
 }
+
+// SortBy ...
 type SortBy []Item
 
 func (a SortBy) Len() int           { return len(a) }
@@ -67,6 +70,7 @@ func oddEvenJumps(A []int) int {
 	return count
 }
 
+// Run ...
 func Run(A []int) int {
 	return oddEvenJumps(A)
 }

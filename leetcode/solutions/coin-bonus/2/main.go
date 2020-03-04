@@ -7,6 +7,7 @@ import (
 
 var totalCoins [50000]uint64
 
+// Member ...
 type Member struct {
 	Leader         *Member
 	SubFollowers   *list.List
@@ -92,6 +93,7 @@ func print(members []Member) {
 	}
 }
 
+// Run ...
 func Run(n int, leadership [][]int, operations [][]int) []int {
 	return bonus(n, leadership, operations)
 }

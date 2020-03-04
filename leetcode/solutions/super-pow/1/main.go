@@ -1,5 +1,6 @@
 package solution
 
+// SuperPow ...
 func SuperPow(a int, b []int) int {
 	const N = 1337
 	remains := []int{}

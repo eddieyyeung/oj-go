@@ -1,5 +1,6 @@
 package pickpeaks
 
+// PosPeaks ...
 type PosPeaks struct {
 	Pos   []int
 	Peaks []int

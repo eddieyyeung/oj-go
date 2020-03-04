@@ -55,6 +55,7 @@ func removeBoxes(boxes []int) int {
 	return remove(boxes, set)
 }
 
+// Run ...
 func Run(boxes []int) int {
 	return removeBoxes(boxes)
 }

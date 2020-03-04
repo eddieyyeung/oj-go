@@ -26,6 +26,7 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 	return dp[m-1][n-1]
 }
 
+// Run ...
 func Run(obstacleGrid [][]int) int {
 	return uniquePathsWithObstacles(obstacleGrid)
 }

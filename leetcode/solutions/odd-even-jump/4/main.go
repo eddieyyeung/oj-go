@@ -1,10 +1,12 @@
 package solution
 
+// Item ...
 type Item struct {
 	Index int
 	Value int
 }
 
+// Tree ...
 type Tree struct {
 	Left  *Tree
 	item  Item
@@ -80,6 +82,7 @@ func oddEvenJumps(A []int) int {
 	return count
 }
 
+// Run ...
 func Run(A []int) int {
 	return oddEvenJumps(A)
 }

@@ -85,6 +85,7 @@ func threeEqualParts(A []int) []int {
 	return []int{-1, -1}
 }
 
+// Run ...
 func Run(A []int) []int {
 	return threeEqualParts(A)
 }

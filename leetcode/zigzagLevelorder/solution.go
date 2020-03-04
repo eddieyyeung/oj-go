@@ -13,14 +13,14 @@ type TreeNode struct {
 
 // zigzagLevelOrder https://leetcode-cn.com/explore/interview/card/top-interview-questions-medium/32/trees-and-graphs/86/
 func zigzagLevelOrder(root *TreeNode) [][]int {
-	r := [][]int{}
+	r := new([][]int)
 	l := list.New()
 	if root == nil {
 		return [][]int{}
 	}
 	l.PushBack(root)
-	traversal(l, 1, &r)
-	return r
+	traversal(l, 1, r)
+	return *r
 }
 
 func traversal(l *list.List, ltor int, r *[][]int) {

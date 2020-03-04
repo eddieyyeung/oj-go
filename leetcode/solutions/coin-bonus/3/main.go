@@ -4,6 +4,7 @@ import (
 	"container/list"
 )
 
+// Node ...
 type Node struct {
 	Left  *Node
 	Right *Node
@@ -11,11 +12,13 @@ type Node struct {
 	Idx   int
 }
 
+// SegmentTree ...
 type SegmentTree struct {
 	Root    *Node
 	Members *[]Member
 }
 
+// Member ...
 type Member struct {
 	SubFollowers *list.List
 	Index        int
@@ -25,6 +28,7 @@ type Member struct {
 	SubCoins     uint64
 }
 
+// BuildLeft ...
 func (st *SegmentTree) BuildLeft(node *Node) *Node {
 	if node.Left == nil {
 		node.Left = &Node{nil, nil, 0, 0}
@@ -32,6 +36,7 @@ func (st *SegmentTree) BuildLeft(node *Node) *Node {
 	return node.Left
 }
 
+// BuildRight ...
 func (st *SegmentTree) BuildRight(node *Node) *Node {
 	if node.Right == nil {
 		node.Right = &Node{nil, nil, 0, 0}
@@ -39,6 +44,7 @@ func (st *SegmentTree) BuildRight(node *Node) *Node {
 	return node.Right
 }
 
+// Update ...
 func (st *SegmentTree) Update(node *Node, start int, end int, l int, r int, val uint64) {
 	if start == end {
 		// Leaf node
@@ -55,6 +61,7 @@ func (st *SegmentTree) Update(node *Node, start int, end int, l int, r int, val 
 	}
 }
 
+// Query ...
 func (st *SegmentTree) Query(node *Node, start int, end int, l int, r int) uint64 {
 	if node == nil {
 		return 0
@@ -68,6 +75,7 @@ func (st *SegmentTree) Query(node *Node, start int, end int, l int, r int) uint6
 	return p1 + p2
 }
 
+// Print ...
 func (st *SegmentTree) Print() {
 	l := list.New()
 	l.PushBack(st.Root)
@@ -154,6 +162,7 @@ func bonus(n int, leadership [][]int, operations [][]int) []int {
 	return result
 }
 
+// Run ...
 func Run(n int, leadership [][]int, operations [][]int) []int {
 	return bonus(n, leadership, operations)
 }

@@ -1,5 +1,6 @@
 package longestcommonsubsequence
 
+// LCS ...
 func LCS(s1, s2 string) string {
 	return l(s1, s2, len(s1)-1, len(s2)-1)
 }

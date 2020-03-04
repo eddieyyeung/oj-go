@@ -4,6 +4,7 @@ import (
 	"github.com/emirpasic/gods/maps/treemap"
 )
 
+// Item ...
 type Item struct {
 	Index int
 	Value int
@@ -40,6 +41,7 @@ func oddEvenJumps(A []int) int {
 	return count
 }
 
+// Run ...
 func Run(A []int) int {
 	return oddEvenJumps(A)
 }

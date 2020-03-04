@@ -55,6 +55,7 @@ func maximumGap(nums []int) int {
 	return gap
 }
 
+// Run ...
 func Run(nums []int) int {
 	return maximumGap(nums)
 }

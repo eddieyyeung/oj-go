@@ -60,6 +60,7 @@ func print(ms []*list.List) {
 	}
 }
 
+// Run ...
 func Run(n int, leadership [][]int, operations [][]int) []int {
 	return bonus(n, leadership, operations)
 }

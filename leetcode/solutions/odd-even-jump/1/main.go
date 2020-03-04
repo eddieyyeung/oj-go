@@ -4,16 +4,20 @@ import (
 	"container/list"
 )
 
+// Item ...
 type Item struct {
 	index  int
 	isOdd  bool
 	isEven bool
 }
+
+// VisitEven ...
 type VisitEven struct {
 	isVisit bool
 	isReach bool
 }
 
+// VisitOdd ...
 type VisitOdd struct {
 	isVisit bool
 	isReach bool
@@ -68,6 +72,7 @@ func oddEvenJumps(A []int) int {
 	return count
 }
 
+// Run ...
 func Run(A []int) int {
 	return oddEvenJumps(A)
 }

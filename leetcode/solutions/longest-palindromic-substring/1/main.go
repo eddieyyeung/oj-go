@@ -57,6 +57,7 @@ func longestPalindrome(s string) string {
 	return result
 }
 
+// Run ...
 func Run(s string) string {
 	return longestPalindrome(s)
 }

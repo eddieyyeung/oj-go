@@ -16,6 +16,7 @@ func uniquePaths(m int, n int) int {
 	return dp[m-1][n-1]
 }
 
+// Run ...
 func Run(m int, n int) int {
 	return uniquePaths(m, n)
 }
