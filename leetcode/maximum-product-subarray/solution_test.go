@@ -1,4 +1,4 @@
-package maxproduct
+package maximumproductsubarray
 
 import "testing"
 
