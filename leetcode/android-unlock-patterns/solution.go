@@ -1,3 +1,5 @@
+// Package androidunlockpatterns ...
+// https://leetcode-cn.com/problems/android-unlock-patterns/
 package androidunlockpatterns
 
 import "math"
@@ -5,7 +7,6 @@ import "math"
 var minStep int
 var maxStep int
 
-// numberOfPatterns https://leetcode-cn.com/problems/android-unlock-patterns/
 func numberOfPatterns(m int, n int) int {
 	minStep = m
 	maxStep = n

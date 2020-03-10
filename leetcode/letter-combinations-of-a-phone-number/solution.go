@@ -1,4 +1,6 @@
-package lettercombinations
+// Package lettercombinationsofaphonenumber
+// https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
+package lettercombinationsofaphonenumber
 
 var digitMap map[string][]string = map[string][]string{
 	"1": []string{},
@@ -30,9 +32,4 @@ func bt(digits string, lc string, re *[]string) {
 	for _, l := range letters {
 		bt(digits[1:], lc+l, re)
 	}
-}
-
-// Run https://leetcode-cn.com/explore/interview/card/top-interview-questions-medium/49/backtracking/91/
-func Run(digits string) []string {
-	return letterCombinations(digits)
 }

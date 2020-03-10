@@ -1,3 +1,5 @@
+// Package generateparenthesis ...
+// https://leetcode-cn.com/problems/generate-parentheses/
 package generateparenthesis
 
 func generateParenthesis(n int) []string {
@@ -17,9 +19,4 @@ func bt(left int, right int, p int, str string, re *[]string) {
 	if right > 0 && p > 0 {
 		bt(left, right-1, p-1, str+")", re)
 	}
-}
-
-// Run https://leetcode-cn.com/explore/interview/card/top-interview-questions-medium/49/backtracking/92/
-func Run(n int) []string {
-	return generateParenthesis(n)
 }

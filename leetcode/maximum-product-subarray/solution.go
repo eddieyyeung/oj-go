@@ -1,6 +1,7 @@
+// Package maximumproductsubarray ...
+// https://leetcode-cn.com/explore/interview/card/top-interview-questions-hard/60/dynamic-programming/154/
 package maximumproductsubarray
 
-// maxProduct https://leetcode-cn.com/explore/interview/card/top-interview-questions-hard/60/dynamic-programming/154/
 func maxProduct(nums []int) int {
 	dp0 := nums[0] // 最大
 	dp1 := nums[0] // 当前序列最大

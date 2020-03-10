@@ -1,8 +1,9 @@
+// Package besttimetobuyandsellstockii ...
+// https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/
 package besttimetobuyandsellstockii
 
 import "math"
 
-// maxProfit https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/
 func maxProfit(prices []int) int {
 	if len(prices) == 0 {
 		return 0

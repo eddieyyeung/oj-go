@@ -1,4 +1,4 @@
-package zigzaglevelorder
+package binarytreezigzaglevelordertraversal
 
 import (
 	"reflect"

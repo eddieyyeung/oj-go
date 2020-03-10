@@ -1,4 +1,4 @@
-package inordertraversal
+package binarytreeinordertraversal
 
 import (
 	"reflect"

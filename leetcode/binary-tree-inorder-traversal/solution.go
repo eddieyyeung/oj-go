@@ -1,4 +1,6 @@
-package inordertraversal
+// Package binarytreeinordertraversal ...
+// https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
+package binarytreeinordertraversal
 
 import (
 	"container/list"
@@ -11,7 +13,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// https://leetcode-cn.com/explore/interview/card/top-interview-questions-medium/32/trees-and-graphs/85/
 func inorderTraversal(root *TreeNode) []int {
 	l := list.New()
 	r := []int{}

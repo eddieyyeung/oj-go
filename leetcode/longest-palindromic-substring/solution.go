@@ -1,6 +1,7 @@
+// Package longestpalindromicsubstring ...
+// https://leetcode-cn.com/problems/longest-palindromic-substring/
 package longestpalindromicsubstring
 
-// longestPalindrome https://leetcode-cn.com/problems/longest-palindromic-substring/
 func longestPalindrome(s string) string {
 	if s == "" {
 		return ""

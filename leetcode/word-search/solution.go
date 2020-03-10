@@ -1,4 +1,6 @@
-package exist
+// Package wordsearch ...
+// https://leetcode-cn.com/problems/word-search/
+package wordsearch
 
 type move struct {
 	x int
@@ -62,9 +64,4 @@ func bt(idx int, word string, board [][]byte, p pos) bool {
 	}
 	visited[p.x][p.y] = false
 	return false
-}
-
-// Run https://leetcode-cn.com/explore/interview/card/top-interview-questions-medium/49/backtracking/95/
-func Run(board [][]byte, word string) bool {
-	return exist(board, word)
 }

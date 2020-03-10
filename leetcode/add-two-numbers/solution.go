@@ -1,6 +1,7 @@
+// Package addtwonumbers ...
+// https://leetcode-cn.com/problems/add-two-numbers/
 package addtwonumbers
 
-// ListNode ...
 type ListNode struct {
 	Val  int
 	Next *ListNode

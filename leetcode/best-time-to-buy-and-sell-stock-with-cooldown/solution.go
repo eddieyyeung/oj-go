@@ -1,6 +1,7 @@
+// Package besttimetobuyandsellstockwithcooldown ...
+// https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
 package besttimetobuyandsellstockwithcooldown
 
-// maxProfit https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
 func maxProfit(prices []int) int {
 	if len(prices) == 0 {
 		return 0

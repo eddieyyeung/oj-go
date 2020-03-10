@@ -1,4 +1,6 @@
-package zigzaglevelorder
+// Package binarytreezigzaglevelordertraversal ...
+// https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
+package binarytreezigzaglevelordertraversal
 
 import (
 	"container/list"
@@ -11,7 +13,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// zigzagLevelOrder https://leetcode-cn.com/explore/interview/card/top-interview-questions-medium/32/trees-and-graphs/86/
 func zigzagLevelOrder(root *TreeNode) [][]int {
 	r := new([][]int)
 	l := list.New()
@@ -28,7 +29,6 @@ func traversal(l *list.List, ltor int, r *[][]int) {
 	s := []int{}
 	for e := l.Back(); e != nil; e = e.Prev() {
 		tn, _ := e.Value.(*TreeNode)
-		// fmt.Printf("%v\n", tn)
 		s = append(s, tn.Val)
 		if ltor == 1 {
 			if tn.Left != nil {
