@@ -12,14 +12,14 @@ func Test_numberOfPatterns(t *testing.T) {
 		args args
 		want int
 	}{
-		// {
-		// 	"case1",
-		// 	args{
-		// 		1,
-		// 		1,
-		// 	},
-		// 	9,
-		// },
+		{
+			"case1",
+			args{
+				1,
+				1,
+			},
+			9,
+		},
 		{
 			"case2",
 			args{
