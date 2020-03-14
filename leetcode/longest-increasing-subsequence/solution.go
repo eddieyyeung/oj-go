@@ -33,7 +33,7 @@ Loop:
 	return len(dp)
 }
 
-// Solution: 动态规划
+// 动态规划
 // func lengthOfLIS(nums []int) int {
 // 	if len(nums) < 1 {
 // 		return 0
@@ -56,7 +56,7 @@ Loop:
 // 	return maxL
 // }
 
-// Solution1: 回溯
+// 回溯
 // func lengthOfLIS(nums []int) int {
 // 	maxl := 0
 // 	for i := 0; i < len(nums); i++ {
