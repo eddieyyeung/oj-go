@@ -1,4 +1,4 @@
-package zui_xiao_de_kge_shu_lcof
+package solution_3
 
 import (
 	"reflect"

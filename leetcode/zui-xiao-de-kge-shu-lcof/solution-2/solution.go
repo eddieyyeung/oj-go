@@ -1,10 +1,11 @@
-package zui_xiao_de_kge_shu_lcof
+package solution_2
 
 import (
 	"errors"
 	"fmt"
 )
 
+// minHeap O(nlogn+logk)
 func getLeastNumbers(arr []int, k int) []int {
 	mh := New(len(arr))
 	for _, v := range arr {
@@ -74,7 +75,7 @@ func (mh *MinHeap) Insert(v int) error {
 
 func (mh *MinHeap) ExtractMin() (int, error) {
 	if mh.Size == 0 {
-		return 0, errors.New(fmt.Sprintf("cannot ExtractMin"))
+		return 0, errors.New(fmt.Sprintf("cannot ExtractMax"))
 	}
 	if mh.Size == 1 {
 		mh.Size--
@@ -86,11 +87,3 @@ func (mh *MinHeap) ExtractMin() (int, error) {
 	mh.MinHeapify(0)
 	return min, nil
 }
-
-// 快排
-// func getLeastNumbers(arr []int, k int) []int {
-// 	sort.Slice(arr, func(i, j int) bool {
-// 		return arr[i] < arr[j]
-// 	})
-// 	return arr[:k]
-// }
