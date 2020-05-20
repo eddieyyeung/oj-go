@@ -1,4 +1,4 @@
-package longestpalindromicsubstring
+package solution1
 
 import "testing"
 
