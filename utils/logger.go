@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	Logger  *zap.Logger
+	Logger  = NewLogger("common")
 	logOnce sync.Once
 )
 
