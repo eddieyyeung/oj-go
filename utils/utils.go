@@ -49,7 +49,7 @@ func GenerateNode(arr []*int) *TreeNode {
 	return root
 }
 
-func Min(arr ...int) int {
+func MinInt(arr ...int) int {
 	if len(arr) == 1 {
 		return arr[0]
 	}
@@ -60,4 +60,13 @@ func Min(arr ...int) int {
 		}
 	}
 	return min
+}
+
+func Count1(x int) int {
+	var count int
+	for x != 0 {
+		x &= x - 1
+		count++
+	}
+	return count
 }
