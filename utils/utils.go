@@ -62,6 +62,19 @@ func MinInt(arr ...int) int {
 	return min
 }
 
+func MaxInt(arr ...int) int {
+	if len(arr) == 1 {
+		return arr[0]
+	}
+	max := arr[0]
+	for i := 1; i < len(arr); i++ {
+		if arr[i] > max {
+			max = arr[i]
+		}
+	}
+	return max
+}
+
 func Count1(x int) int {
 	var count int
 	for x != 0 {
