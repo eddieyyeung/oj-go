@@ -8,12 +8,12 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func GenerateNode(arr []*int) *TreeNode {
+func GenerateNode(arr []int) *TreeNode {
 	if len(arr) == 0 {
 		return nil
 	}
 	root := &TreeNode{
-		Val:   *arr[0],
+		Val:   arr[0],
 		Left:  nil,
 		Right: nil,
 	}
@@ -23,9 +23,9 @@ func GenerateNode(arr []*int) *TreeNode {
 		e := l.Front()
 		p := e.Value.(*TreeNode)
 		var left, right *TreeNode
-		if arr[i] != nil {
+		if arr[i] != -1 {
 			left = &TreeNode{
-				Val:   *arr[i],
+				Val:   arr[i],
 				Left:  nil,
 				Right: nil,
 			}
@@ -33,9 +33,9 @@ func GenerateNode(arr []*int) *TreeNode {
 		}
 		if i+1 < len(arr) {
 			i = i + 1
-			if arr[i] != nil {
+			if arr[i] != -1 {
 				right = &TreeNode{
-					Val:   *arr[i],
+					Val:   arr[i],
 					Left:  nil,
 					Right: nil,
 				}
