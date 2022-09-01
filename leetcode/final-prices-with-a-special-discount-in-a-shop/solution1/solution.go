@@ -1,4 +1,4 @@
-package final_prices_with_a_special_discount_in_a_shop
+package solution1
 
 func finalPrices(prices []int) []int {
 	for i := 0; i < len(prices); i++ {
