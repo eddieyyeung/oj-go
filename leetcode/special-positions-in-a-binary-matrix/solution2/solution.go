@@ -1,6 +1,5 @@
 package solution2
 
-// 只要满足横竖累加总和为 2 即可
 func numSpecial(mat [][]int) (ans int) {
 	m, n := len(mat[0]), len(mat)
 	pos := make([]int, m)
