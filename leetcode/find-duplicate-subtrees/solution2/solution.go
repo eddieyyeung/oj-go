@@ -1,5 +1,7 @@
 package solution2
 
+// problem: https://leetcode.cn/problems/find-duplicate-subtrees/
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
