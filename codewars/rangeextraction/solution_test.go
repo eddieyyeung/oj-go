@@ -1,6 +1,7 @@
+package rangeextraction
+
 import (
 	"fmt"
-	"oj-go/codewars/rangeextraction"
 	"reflect"
 	"testing"
 )
@@ -17,7 +18,7 @@ func TestSolution(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run(fmt.Sprintf("%v", tc.list), func(t *testing.T) {
-			got := rangeextraction.Solution(tc.list)
+			got := Solution(tc.list)
 			if reflect.DeepEqual(got, tc.want) == false {
 				t.Errorf("got %v; want %v", got, tc.want)
 			}

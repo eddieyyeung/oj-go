@@ -6,24 +6,11 @@ import (
 )
 
 func TestGenerateNode(t *testing.T) {
-	var case1 = []*int{
-		PointerInt(1),
-		PointerInt(2),
-		PointerInt(3),
-		PointerInt(4),
-		PointerInt(5)}
+	var case1 = []int{1, 2, 3, 4, 5}
 	node := GenerateNode(case1)
 	logger.Sugar().Infow("case1", "node", node)
 
-	var case2 = []*int{
-		PointerInt(4),
-		PointerInt(5),
-		PointerInt(2),
-		nil,
-		nil,
-		PointerInt(3),
-		PointerInt(1),
-	}
+	var case2 = []int{4, 5, 2, -1, -1, 3, 1}
 	node = GenerateNode(case2)
 	logger.Sugar().Infow("case2", "node", node)
 }
