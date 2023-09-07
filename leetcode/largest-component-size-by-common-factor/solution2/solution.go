@@ -5,35 +5,35 @@ type UnionFind struct {
 	Rank   []int
 }
 
-func newUnionFind(n int) UnionFind {
-	parent := make([]int, n)
-	rank := make([]int, n)
-	for i := 0; i < n; i++ {
+func New(cap int) *UnionFind {
+	parent := make([]int, cap)
+	rank := make([]int, cap)
+	for i := 0; i < cap; i++ {
 		parent[i] = i
 	}
-	return UnionFind{
+	return &UnionFind{
 		Parent: parent,
 		Rank:   rank,
 	}
 }
 
-func (uf UnionFind) find(x int) int {
+func (uf UnionFind) Find(x int) int {
 	if uf.Parent[x] != x {
-		// Path Compression
-		uf.Parent[x] = uf.find(uf.Parent[x])
+		// path compression
+		uf.Parent[x] = uf.Find(uf.Parent[x])
 	}
 	return uf.Parent[x]
 }
 
-func (uf UnionFind) merge(x, y int) {
-	x, y = uf.find(x), uf.find(y)
+func (uf UnionFind) Union(x, y int) {
+	x, y = uf.Find(x), uf.Find(y)
 	if x == y {
 		return
 	}
-	// Union by rank
+	// union by rank
 	if uf.Rank[x] > uf.Rank[y] {
 		uf.Parent[y] = x
-	} else if uf.Rank[y] > uf.Rank[x] {
+	} else if uf.Rank[x] < uf.Rank[y] {
 		uf.Parent[x] = y
 	} else {
 		uf.Parent[x] = y
@@ -48,20 +48,20 @@ func largestComponentSize(nums []int) int {
 			m = num
 		}
 	}
-	uf := newUnionFind(m + 1)
+	uf := New(m + 1)
 	for _, num := range nums {
 		uf.Rank[num] = 1
 		for i := 2; i*i <= num; i++ {
 			if num%i == 0 {
-				uf.merge(i, num)
-				uf.merge(num/i, num)
+				uf.Union(i, num)
+				uf.Union(num/i, num)
 			}
 		}
 	}
 	tm := make(map[int]int)
 	var ans int
 	for _, num := range nums {
-		p := uf.find(num)
+		p := uf.Find(num)
 		tm[p]++
 		if tm[p] > ans {
 			ans = tm[p]
