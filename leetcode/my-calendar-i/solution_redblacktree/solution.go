@@ -1,4 +1,4 @@
-package solution2
+package solutionredblacktree
 
 import (
 	"math"
