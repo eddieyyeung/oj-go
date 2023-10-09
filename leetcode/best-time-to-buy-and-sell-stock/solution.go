@@ -1,15 +1,16 @@
-// Package besttimetobuyandsellstock ...
-// https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
 package besttimetobuyandsellstock
 
 func maxProfit(prices []int) int {
-	max := 0
-	for i := 0; i < len(prices)-1; i++ {
-		for j := i + 1; j < len(prices); j++ {
-			if diff := prices[j] - prices[i]; diff > max {
-				max = diff
-			}
+	var buy, sell int
+	buy = prices[0]
+	for i := 1; i < len(prices); i++ {
+		price := prices[i]
+		if price-buy > sell {
+			sell = price - buy
+		}
+		if price < buy {
+			buy = price
 		}
 	}
-	return max
+	return sell
 }
