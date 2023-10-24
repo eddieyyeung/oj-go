@@ -8,7 +8,7 @@ func lengthOfLongestSubstring(s string) int {
 	for right, ch := range s {
 		idx := ch - ' '
 		haschar[idx]++
-		for left < right && haschar[idx] > 1 {
+		for haschar[idx] > 1 {
 			haschar[s[left]-' ']--
 			left++
 		}
