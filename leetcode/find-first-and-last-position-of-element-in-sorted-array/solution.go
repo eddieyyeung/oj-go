@@ -9,12 +9,14 @@ func searchRange(nums []int, target int) []int {
 	return []int{start, end}
 }
 
+// 寻找 nums 中大于或等于 target 的最小下标 index
 func lower_bound(nums []int, target int) int {
+	// [left, right] 左右闭合区间
 	left, right := 0, len(nums)-1
 	for left <= right {
-		mid := (left + right) >> 1
-		num := nums[mid]
-		if target <= num {
+		mid := right - (right-left)>>1
+		mnum := nums[mid]
+		if target <= mnum {
 			right = mid - 1
 		} else {
 			left = mid + 1
