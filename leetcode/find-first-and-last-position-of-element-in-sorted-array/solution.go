@@ -14,7 +14,7 @@ func lower_bound(nums []int, target int) int {
 	// [left, right] 左右闭合区间
 	left, right := 0, len(nums)-1
 	for left <= right {
-		mid := right - (right-left)>>1
+		mid := (left + right) / 2
 		mnum := nums[mid]
 		if target <= mnum {
 			right = mid - 1
@@ -22,5 +22,5 @@ func lower_bound(nums []int, target int) int {
 			left = mid + 1
 		}
 	}
-	return left
+	return right + 1
 }
