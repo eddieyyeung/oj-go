@@ -1,35 +1,26 @@
-// Package lettercombinationsofaphonenumber
-// https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
+// 17. 电话号码的字母组合
+// https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/
 package lettercombinationsofaphonenumber
 
-var digitMap map[string][]string = map[string][]string{
-	"1": []string{},
-	"2": []string{"a", "b", "c"},
-	"3": []string{"d", "e", "f"},
-	"4": []string{"g", "h", "i"},
-	"5": []string{"j", "k", "l"},
-	"6": []string{"m", "n", "o"},
-	"7": []string{"p", "q", "r", "s"},
-	"8": []string{"t", "u", "v"},
-	"9": []string{"w", "x", "y", "z"},
-}
-
 func letterCombinations(digits string) []string {
-	re := []string{}
-	if len(digits) == 0 {
-		return re
+	n := len(digits)
+	if n == 0 {
+		return nil
 	}
-	bt(digits, "", &re)
-	return re
-}
-
-func bt(digits string, lc string, re *[]string) {
-	if len(digits) == 0 {
-		*re = append(*re, lc)
-		return
+	var ans []string
+	digitMap := []string{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"}
+	path := make([]byte, n)
+	var dfs func(int)
+	dfs = func(i int) {
+		if i == n {
+			ans = append(ans, string(path))
+			return
+		}
+		for _, c := range digitMap[digits[i]-'0'] {
+			path[i] = byte(c)
+			dfs(i + 1)
+		}
 	}
-	letters := digitMap[string(digits[0])]
-	for _, l := range letters {
-		bt(digits[1:], lc+l, re)
-	}
+	dfs(0)
+	return ans
 }
