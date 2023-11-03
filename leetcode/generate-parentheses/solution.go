@@ -1,22 +1,33 @@
-// Package generateparenthesis ...
-// https://leetcode-cn.com/problems/generate-parentheses/
+// 22. 括号生成
+// https://leetcode.cn/problems/generate-parentheses/description/
 package generateparenthesis
 
-func generateParenthesis(n int) []string {
-	re := []string{}
-	bt(n, n, 0, "", &re)
-	return re
-}
+import "strings"
 
-func bt(left int, right int, p int, str string, re *[]string) {
-	if left == 0 && right == 0 {
-		*re = append(*re, str)
-		return
+// 时间复杂度：O(n*C(2n, n)) Catalan
+func generateParenthesis(n int) []string {
+	var ans []string
+	var path []string
+	var dfs func(i, j int)
+	dfs = func(i, j int) {
+		if i == j && i == n {
+			ans = append(ans, strings.Join(path, ""))
+			return
+		}
+		// 加左括号，当左括号的个数小于 n 时才能够添加
+		if i < n {
+			path = append(path, "(")
+			dfs(i+1, j)
+			path = path[:len(path)-1]
+		}
+
+		// 加右括号，当左括号的个数大于右括号的个数时才能够添加
+		if i > j {
+			path = append(path, ")")
+			dfs(i, j+1)
+			path = path[:len(path)-1]
+		}
 	}
-	if left > 0 {
-		bt(left-1, right, p+1, str+"(", re)
-	}
-	if right > 0 && p > 0 {
-		bt(left, right-1, p-1, str+")", re)
-	}
+	dfs(0, 0)
+	return ans
 }
