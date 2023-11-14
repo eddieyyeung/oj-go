@@ -13,6 +13,14 @@ func Test_coinChange(t *testing.T) {
 		want int
 	}{
 		{
+			name: "",
+			args: args{
+				coins:  []int{411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422},
+				amount: 9864,
+			},
+			want: 24,
+		},
+		{
 			"[1, 2, 5]",
 			args{
 				[]int{1, 2, 5},
