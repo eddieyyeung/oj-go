@@ -1,4 +1,4 @@
-package edit_distance
+package solution1
 
 import "testing"
 
@@ -12,6 +12,7 @@ func Test_minDistance(t *testing.T) {
 		args args
 		want int
 	}{
+		{"", args{"", "a"}, 1},
 		{"", args{"zoologicoarchaeologist", "zoogeologist"}, 10},
 		{"", args{"horse", "ros"}, 3},
 		{"", args{"intention", "execution"}, 5},
