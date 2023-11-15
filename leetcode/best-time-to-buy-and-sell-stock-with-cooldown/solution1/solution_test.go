@@ -1,4 +1,4 @@
-package solution2
+package solution
 
 import "testing"
 
@@ -12,25 +12,25 @@ func Test_maxProfit(t *testing.T) {
 		want int
 	}{
 		{
-			name: "",
-			args: args{
-				prices: []int{7, 1, 5, 3, 6, 4},
+			"[1,2,1,2,1,3,5,1]",
+			args{
+				[]int{1, 2, 1, 2, 1, 3, 5, 1},
 			},
-			want: 7,
+			5,
 		},
 		{
-			name: "",
-			args: args{
-				prices: []int{1, 2, 3, 4, 5},
+			"[2,1]",
+			args{
+				[]int{2, 1},
 			},
-			want: 4,
+			0,
 		},
 		{
-			name: "",
-			args: args{
-				prices: []int{7, 6, 4, 3, 1},
+			"[1,2,3,0,2]",
+			args{
+				[]int{1, 2, 3, 0, 2},
 			},
-			want: 0,
+			3,
 		},
 	}
 	for _, tt := range tests {
