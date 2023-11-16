@@ -3,10 +3,10 @@
 package solution
 
 // if s[i]==t[j], dfs(i,j) = dfs(i-1,j-1)+1
-// if s[i]!=t[j], dfs(i,j) = max(dfs(i-1,j), dfs(i,j-1)
+// if s[i]!=t[j], dfs(i,j) = max(dfs(i-1,j), dfs(i,j-1))
 // =>
 // if s[i]==t[j], dfs(i+1,j+1) = dfs(i,j)+1
-// if s[i]!=t[j], dfs(i+1,j+1) = max(dfs(i,j+1), dfs(i+1,j)
+// if s[i]!=t[j], dfs(i+1,j+1) = max(dfs(i,j+1), dfs(i+1,j))
 //
 // 边界条件：
 // if i < 0 || j < 0, return 0
