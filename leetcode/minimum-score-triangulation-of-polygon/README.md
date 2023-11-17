@@ -1,7 +1,7 @@
-### 题目
+## 题目
 [1039. 多边形三角剖分的最低得分](https://leetcode.cn/problems/minimum-score-triangulation-of-polygon/description/)
 
-### 解题思路
+## 解题思路
 
 定义 $dp(i,j)$ 表示区间 $[i,j]$ 之间，多边形三角剖分的最低得分。
 
