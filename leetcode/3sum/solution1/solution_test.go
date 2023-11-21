@@ -1,4 +1,4 @@
-package solution1
+package solution
 
 import (
 	"reflect"
@@ -27,18 +27,11 @@ func Test_threeSum(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: []int{3, 0, -2, -1, 1, 2},
-			},
-			want: [][]int{},
-		},
-		{
-			name: "",
-			args: args{
 				nums: []int{-1, 0, 1, 2, -1, -4},
 			},
 			want: [][]int{
-				{-1, 2, -1},
-				{-1, 1, 0},
+				{-1, -1, 2},
+				{-1, 0, 1},
 			},
 		},
 		{
@@ -46,12 +39,12 @@ func Test_threeSum(t *testing.T) {
 			args: args{
 				nums: []int{0, 1, 1},
 			},
-			want: [][]int{},
+			want: nil,
 		},
 		{
 			name: "",
 			args: args{
-				nums: []int{0, 0, 0},
+				nums: []int{0, 0, 0, 0},
 			},
 			want: [][]int{
 				{0, 0, 0},
