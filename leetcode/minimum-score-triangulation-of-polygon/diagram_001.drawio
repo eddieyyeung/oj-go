@@ -1,0 +1,42 @@
+<mxfile host="Electron" modified="2023-12-08T08:30:47.332Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.3 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="ZSGVLrveMkSTKjmy8vYM" version="22.0.3" type="device">
+  <diagram name="Page-1" id="hInNxTN01jFRHfQgWwI_">
+    <mxGraphModel dx="1038" dy="770" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tK60V9xyH2oSDJY-tEqm-1" value="" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;size=40;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="350" y="330" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="tK60V9xyH2oSDJY-tEqm-4" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.orthogonal_triangle;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="390" y="330" width="100" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="tK60V9xyH2oSDJY-tEqm-5" value="v[k]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontFamily=Comic Sans MS;" parent="1" vertex="1">
+          <mxGeometry x="360" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tK60V9xyH2oSDJY-tEqm-6" value="v[i]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontFamily=Comic Sans MS;" parent="1" vertex="1">
+          <mxGeometry x="360" y="470" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tK60V9xyH2oSDJY-tEqm-7" value="v[j]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontFamily=Comic Sans MS;" parent="1" vertex="1">
+          <mxGeometry x="470" y="470" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tK60V9xyH2oSDJY-tEqm-8" value="子问题&lt;br style=&quot;font-size: 14px;&quot;&gt;计算从 i 到 j 的最低得分" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="555" y="320" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tK60V9xyH2oSDJY-tEqm-9" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;background-color: initial; font-size: 14px;&quot;&gt;下一个子问题：&lt;/span&gt;&lt;/div&gt;计算从 i 到 k 的最低得分&lt;br style=&quot;font-size: 14px;&quot;&gt;计算从 k 到 j 的最低得分" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="555" y="430" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tK60V9xyH2oSDJY-tEqm-10" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.417;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="tK60V9xyH2oSDJY-tEqm-9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="370" as="sourcePoint" />
+            <mxPoint x="610" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tK60V9xyH2oSDJY-tEqm-11" value="枚举 k 从 i+1 到 j-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="tK60V9xyH2oSDJY-tEqm-10" vertex="1" connectable="0">
+          <mxGeometry x="-0.1333" y="1" relative="1" as="geometry">
+            <mxPoint x="69" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
