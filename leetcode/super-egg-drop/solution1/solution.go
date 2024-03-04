@@ -1,3 +1,5 @@
+// 887. 鸡蛋掉落
+// https://leetcode.cn/problems/super-egg-drop/description/
 package solution
 
 // k eggs, 1-n floors
