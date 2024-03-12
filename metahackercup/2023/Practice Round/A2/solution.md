@@ -2,12 +2,12 @@
 problem: https://www.facebook.com/codingcompetitions/hacker-cup/2023/practice-round/problems/A2
 
 we all know according to the problem:
-- $A$ is the cost of one single cheesburger
-- $B$ is the cost of one double cheesburger
-- $C$ is the money we have
+- $A$ is the cost of one single cheeseburger
+- $B$ is the cost of one double cheeseburger
+- $C$ is all the money we have
 
 let's make some definitions:
-- $K_{max}$ is the answer we want K-decker cheeseburger.
+- $K_{max}$ is the answer K-decker cheeseburger we want.
 - $N_S$ is the number of single cheeseburgers
 - $N_D$ is the number of double cheeseburgers
 - $N_{bun}$ is the number of buns of $K_{max}$-decker cheeseburger
@@ -32,7 +32,7 @@ and
 
 $K_{max} = min(2N_S + 2N_D-1, N_S + 2N_D)$
 
-let's continue to list some cases:
+let's continue to list some buying cases:
 
 ### case 1
 we buy 0 single, means $N_S = 0$, then 
@@ -53,7 +53,7 @@ K_{max} = min(2N_S + 2N_D-1, N_S + 2N_D) \\
 = N_S + 2\lfloor (C-A*N_S)/B \rfloor   
 $$
 
-let's see this function: $y = x + 2(C-A*x)/B$, we should find the $y_{max}$ by according to $x$:
+let's see this function: $y = x + 2(C-A*x)/B$, we should find the $y_{max}$ according to $x$:
 
 $y = x + 2(C-A*x)/B = (1-2A/B)x + 2C/B$
 
