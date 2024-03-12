@@ -48,7 +48,6 @@ $K_{2} = min(2 + 2N_D-1, 1 + 2N_D) = 1+2N_D$
 we buy 2 and more than 2 singles, means $N_S \geq 2$, then 
 
 $$
-
 K_{max} = min(2N_S + 2N_D-1, N_S + 2N_D) \\
 = N_S + 2N_D \\
 = N_S + 2\lfloor (C-A*N_S)/B \rfloor   
@@ -58,11 +57,12 @@ let's see this function: $y = x + 2(C-A*x)/B$, we should find the $y_{max}$ by a
 
 $y = x + 2(C-A*x)/B = (1-2A/B)x + 2C/B$
 
-$$y_{max} = 
-    \begin{cases}
-    (1-2A/B)*x_{max} + 2C/B = (1-2A/B)*\lfloor C/A \rfloor + 2C/B & \text{if 1-2A/B > 0} \\
-    (1-2A/B)*x_{min} + 2C/B = (1-2A/B)*2 + 2C/B & \text{if 1-2A/B < 0} 
-    \end{cases}
+$$
+y_{max} = 
+  \begin{cases}
+    (1-2A/B) * x_{max} + 2C/B = (1-2A/B) * \lfloor C/A \rfloor + 2C/B & \text{if 1-2A/B > 0} \\
+    (1-2A/B) * x_{min} + 2C/B = (1-2A/B) * 2 + 2C/B & \text{if 1-2A/B < 0} 
+  \end{cases}
 $$
 
 now we use $x_{max}$ to get $K_3$ means, we buy $\lfloor C/A \rfloor$ singles, no double.
