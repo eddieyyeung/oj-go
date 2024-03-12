@@ -69,7 +69,7 @@ now we use $x_{max}$ to get $K_3$ means, we buy $\lfloor C/A \rfloor$ singles, n
 
 and we use $x_{min}$ to get $K_4$ means, we buy 2 singles and as many doubles 
 
-so, the final two situation is:
+so, the final two situations is:
 
 $K_3 = \lfloor C/A \rfloor$
 
