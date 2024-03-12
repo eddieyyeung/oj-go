@@ -60,14 +60,14 @@ $y = x + 2(C-A*x)/B = (1-2A/B)x + 2C/B$
 $$
 y_{max} = 
   \begin{cases}
-    (1-2A/B) * x_{max} + 2C/B = (1-2A/B) * \lfloor C/A \rfloor + 2C/B & \text{if 1-2A/B > 0} \\
-    (1-2A/B) * x_{min} + 2C/B = (1-2A/B) * 2 + 2C/B & \text{if 1-2A/B < 0} 
+    (1-2A/B) * x_{max} + 2C/B & \text{if 1-2A/B > 0} \\
+    (1-2A/B) * x_{min} + 2C/B & \text{if 1-2A/B < 0} 
   \end{cases}
 $$
 
-now we use $x_{max}$ to get $K_3$ means, we buy $\lfloor C/A \rfloor$ singles, no double.
+now we use $x_{max}$ to get $K_3$, that means, we buy $\lfloor C/A \rfloor$ singles, no double.
 
-and we use $x_{min}$ to get $K_4$ means, we buy 2 singles and as many doubles 
+and we use $x_{min}$ to get $K_4$, that means, we buy 2 singles and as many doubles 
 
 so, the final two situations is:
 
