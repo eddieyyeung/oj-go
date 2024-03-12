@@ -1,6 +1,6 @@
 # Problem A2: Cheeseburger Corollary 2 Solution
+problem: https://www.facebook.com/codingcompetitions/hacker-cup/2023/practice-round/problems/A2
 
-### step 1
 we all know according to the problem:
 - $A$ is the cost of one single cheesburger
 - $B$ is the cost of one double cheesburger
