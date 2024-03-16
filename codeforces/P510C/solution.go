@@ -3,6 +3,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"io"
 	"os"
@@ -40,6 +41,11 @@ func (graph *Graph) TopSort() ([]int, bool) {
 		}
 	}
 	return order, len(order) == graph.Size
+}
+
+type CaseArg struct {
+	N     int
+	Names []string
 }
 
 func solve(ca CaseArg) string {
@@ -88,12 +94,7 @@ func solve(ca CaseArg) string {
 	return ans.String()
 }
 
-type CaseArg struct {
-	N     int
-	Names []string
-}
-
-func scanCase(in io.Reader, out io.Writer) {
+func runCase(in io.Reader, out io.Writer) {
 	var ca CaseArg
 	fmt.Fscan(in, &ca.N)
 	for i := 0; i < ca.N; i++ {
@@ -105,5 +106,8 @@ func scanCase(in io.Reader, out io.Writer) {
 }
 
 func main() {
-	scanCase(os.Stdin, os.Stdout)
+	in := bufio.NewReader(os.Stdin)
+	out := bufio.NewWriter(os.Stdout)
+	defer out.Flush()
+	runCase(in, out)
 }

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"os"
 	"testing"
 )
@@ -14,7 +15,12 @@ func Test_solve(t *testing.T) {
 	defer inputFile.Close()
 	outputFile, _ = os.OpenFile(output, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
 	defer outputFile.Close()
+
+	in := bufio.NewReader(inputFile)
+	out := bufio.NewWriter(outputFile)
+	defer out.Flush()
+
 	for i := 0; i < 5; i++ {
-		scanCase(inputFile, outputFile)
+		runCase(in, out)
 	}
 }
