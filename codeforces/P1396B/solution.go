@@ -4,95 +4,29 @@ package main
 
 import (
 	"bufio"
-	"container/heap"
 	"fmt"
 	"io"
 	"os"
 )
 
-type Item struct {
-	Index int
-	Value int
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }
-
-type MaxHeap []Item
-
-// Len implements heap.Interface.
-func (m MaxHeap) Len() int {
-	return len(m)
-}
-
-// Less implements heap.Interface.
-func (m MaxHeap) Less(i int, j int) bool {
-	return m[i].Value > m[j].Value
-}
-
-// Pop implements heap.Interface.
-func (m *MaxHeap) Pop() any {
-	old := *m
-	l := len(old)
-	v := old[l-1]
-	*m = old[:l-1]
-	return v
-}
-
-// Push implements heap.Interface.
-func (m *MaxHeap) Push(x any) {
-	*m = append(*m, x.(Item))
-}
-
-// Swap implements heap.Interface.
-func (m MaxHeap) Swap(i int, j int) {
-	m[i], m[j] = m[j], m[i]
-}
-
-var _ heap.Interface = &MaxHeap{}
 
 func solve(ca CaseArg) string {
-	var ans string
-	var pre int = -1
-	var win_turn int = -1
-	var h MaxHeap
-	heap.Init(&h)
-	for i := 0; i < ca.N; i++ {
-		heap.Push(&h, Item{
-			Index: i,
-			Value: ca.As[i],
-		})
+	var m int
+	var s int
+	for _, a := range ca.As {
+		m = max(m, a)
+		s += a
 	}
-	for {
-		if len(h) == 0 {
-			break
-		}
-		last := heap.Pop(&h).(Item)
-		if last.Index == pre {
-			if len(h) == 0 {
-				break
-			}
-			last2 := heap.Pop(&h).(Item)
-			pre = last2.Index
-			win_turn = -win_turn
-			last2.Value--
-			if last2.Value != 0 {
-				heap.Push(&h, last2)
-			}
-			heap.Push(&h, last)
-		} else {
-			pre = last.Index
-			win_turn = -win_turn
-			last.Value--
-			if last.Value != 0 {
-				heap.Push(&h, last)
-			}
-		}
+	if s&1 == 1 || m*2 > s {
+		return "T"
 	}
-	if win_turn == 1 {
-		ans = "T"
-	} else {
-		ans = "HL"
-	}
-
-	return ans
+	return "HL"
 }
 
 type CaseArg struct {
