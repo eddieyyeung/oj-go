@@ -1,5 +1,7 @@
 ## 题目
 
+P1437: https://codeforces.com/problemset/problem/1437/C
+
 给一个整型数组 $\lbrace t | t_1, t_2,...,t_n \rbrace (1 \le t_i \le n)$，在某个时刻 $T_i$ 中取出一个数，直到全部取出，求得到的最小的 **unpleasant value**。其中每个时刻 $T_i$ 只能取出其中一个数。
 
 $$
