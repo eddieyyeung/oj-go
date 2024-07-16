@@ -19,7 +19,7 @@ func Test_majorityElement(t *testing.T) {
 			args: args{
 				nums: []int{1, 1, 2, 2, 7, 7, 8, 8, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3},
 			},
-			want: []int{3, 9},
+			want: []int{9, 3},
 		},
 		{
 			name: "",
