@@ -6,56 +6,49 @@ package majorityelementii
 // https://www.geeksforgeeks.org/boyer-moore-majority-voting-algorithm/
 // https://www.geeksforgeeks.org/boyer-moore-majority-voting-algorithm-for-searching-elements-having-more-than-k-occurrences/
 func mjrty(nums []int, k int) []int {
-	candidates := make([]int, k)
-	votes := make([]int, k)
-	for i := 0; i < k; i++ {
-		candidates[i] = nums[0]
+	var INF int = 1e9 + 1
+	candidates := make([][2]int, k-1)
+	for i := 0; i < len(candidates); i++ {
+		candidates[i][0] = INF
 	}
-
-	for i := 0; i < len(nums); i++ {
-		num := nums[i]
-		is_vote := false
-		for j, candidate := range candidates {
-			if candidate == num {
-				votes[j]++
-				is_vote = true
-				break
-			}
-		}
-		if is_vote {
-			continue
-		}
-		is_change_candidate := false
-		for j, vote := range votes {
-			if vote == 0 {
-				candidates[j] = num
-				votes[j]++
-				is_change_candidate = true
-				break
-			}
-		}
-		if is_change_candidate {
-			continue
-		}
-		for j := range votes {
-			votes[j]--
-		}
-	}
-	m := make(map[int]bool)
 	var ret []int
+	for _, num := range nums {
+		is_found := false
+		for j := 0; j < k-1; j++ {
+			if candidates[j][0] == num {
+				candidates[j][1]++
+				is_found = true
+				break
+			}
+		}
+		if !is_found {
+			for j := 0; j < k-1; j++ {
+				if candidates[j][1] == 0 {
+					candidates[j][0] = num
+					candidates[j][1] = 1
+					is_found = true
+					break
+				}
+			}
+		}
+		if !is_found {
+			for j := 0; j < k-1; j++ {
+				candidates[j][1]--
+			}
+		}
+	}
 	for _, candidate := range candidates {
-		if m[candidate] {
+		if candidate[0] == INF {
 			continue
 		}
 		cnt := 0
 		for _, num := range nums {
-			if candidate == num {
+			if candidate[0] == num {
 				cnt++
 			}
 		}
 		if cnt > len(nums)/k {
-			ret = append(ret, candidate)
-			m[candidate] = true
+			ret = append(ret, candidate[0])
 		}
 	}
 	return ret
