@@ -3,22 +3,17 @@
 package longest_substring_without_repeating_characters
 
 func lengthOfLongestSubstring(s string) int {
-	hash := map[rune]int{}
-	longest := 0
-	start := 0
-	for i, char := range s {
-		if v, ok := hash[char]; ok && v >= start {
-			if l := i - start; l > longest {
-				longest = l
-			}
-			start = v + 1
-			hash[char] = i
-		} else {
-			hash[char] = i
+	var j = 0
+	m := make(map[byte]bool)
+	rst := 0
+	for i := 0; i < len(s); i++ {
+		c := s[i]
+		for m[c] && j < i {
+			m[s[j]] = false
+			j++
 		}
+		rst = max(rst, i-j+1)
+		m[c] = true
 	}
-	if l := len(s) - start; l > longest {
-		return l
-	}
-	return longest
+	return rst
 }
