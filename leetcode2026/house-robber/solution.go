@@ -1,5 +1,6 @@
 package house_robber
 
+// https://leetcode.cn/problems/house-robber
 func rob(nums []int) int {
 	n := len(nums)
 	dp := make([]int, n)
@@ -14,9 +15,9 @@ func rob(nums []int) int {
 		if dp[i] != -1 {
 			return dp[i]
 		}
-		dp[i] = max(dfs(i-2)+nums[i], dfs(i-1))
+
+		dp[i] = max(dfs(i-1), dfs(i-2)+nums[i])
 		return dp[i]
 	}
-	ans := dfs(n - 1)
-	return ans
+	return dfs(n - 1)
 }
