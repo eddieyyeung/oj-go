@@ -17,3 +17,6 @@ example
 
 .DS_Store
 *.bkp
+
+.scratch
+.zed
